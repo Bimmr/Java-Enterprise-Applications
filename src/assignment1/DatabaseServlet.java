@@ -1,4 +1,4 @@
-package com.bimmr.assignment1;
+package assignment1;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -53,7 +53,7 @@ public class DatabaseServlet extends HttpServlet {
 
 		if(session.getAttribute("connection") == null)
 			session.setAttribute("connection", connectToDatabase());
-		
+
 		
 	}
 
