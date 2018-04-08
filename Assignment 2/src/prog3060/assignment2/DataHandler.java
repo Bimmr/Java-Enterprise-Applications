@@ -68,6 +68,7 @@ public class DataHandler implements Closeable {
 			Predicate p2 = cb.lessThan(root.get("alternativeCode"), area.getCode() + "" + "999");
 			cq.where(p1, p2);
 		}
+		cq.orderBy(cb.desc(root.get("alternativeCode")));
 
 		// Get result
 		TypedQuery<GeographicArea> tq = em.createQuery(cq);
@@ -210,6 +211,7 @@ public class DataHandler implements Closeable {
 		preds.add(cb.equal(totalIncome.get("description"), totalIncomeValue));
 
 		cq.where(preds.toArray(new Predicate[preds.size()]));
+		cq.orderBy(cb.desc(root.get("numberReported")));
 
 		// Get result
 		TypedQuery<Household> tq = em.createQuery(cq);

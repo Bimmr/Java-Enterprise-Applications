@@ -1,7 +1,6 @@
 package prog3060.assignment2.servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import prog3060.assignment2.DataHandler;
-import prog3060.assignment2.Utils;
 import prog3060.assignment2.Models.GeographicArea;
 import prog3060.assignment2.Models.Household;
 
@@ -47,6 +45,7 @@ public class GeographicAreaServlet extends HttpServlet {
 			request.setAttribute("countries", dh.getGeographicAreas("level", 0));
 			request.setAttribute("provs", dh.getGeographicAreas("level", 1));
 			request.setAttribute("cities", dh.getGeographicAreas("level", 2));
+			request.setAttribute("partCities", dh.getGeographicAreas("level", 3));
 			request.setAttribute("ages", dh.getAges(1));
 			List<Household> medians = dh.getMedianIncomes(1, 2016, 
 					"One couple census family without other persons in the household", 

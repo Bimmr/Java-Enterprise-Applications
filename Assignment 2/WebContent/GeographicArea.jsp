@@ -143,23 +143,50 @@
                         	</div>
                         </div>
                         <div id="cities" class="tab-pane fade">
-                            <h3>Cities</h3>
-                            <table class="table">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Code</th>
-                                    <th>Level</th>
-                                    <th>Alternative Code</th>
-                                </tr>
-                                <c:forEach var="city" items="${cities}">
-                                    <tr>
-                                        <td><a href="GeographicAreaSingleServlet?id=${city.geographicAreaID}">${city.name}</a></td>
-                                        <td>${city.code}</td>
-                                        <td>${city.level}</td>
-                                        <td>${city.alternativeCode}</td>
-                                    </tr>
-                                </c:forEach>
-                            </table>
+                        <ul class="nav nav-tabs nav-pills nav-justified">
+		                        <li class="active"><a data-toggle="tab" href="#cities2">Level 2</a></li>
+		                        <li><a data-toggle="tab" href="#cities3">Level 3</a></li>
+                    		</ul>
+
+	                    	<div class="tab-content">
+                        		<div id="cities2" class="tab-pane fade in active">
+		                            <h3>Cities Level 2</h3>
+		                            <table class="table">
+		                                <tr>
+		                                    <th>Name</th>
+		                                    <th>Code</th>
+		                                    <th>Level</th>
+		                                    <th>Alternative Code</th>
+		                                </tr>
+		                                <c:forEach var="city" items="${cities}">
+		                                    <tr>
+		                                        <td><a href="GeographicAreaSingleServlet?id=${city.geographicAreaID}">${city.name}</a></td>
+		                                        <td>${city.code}</td>
+		                                        <td>${city.level}</td>
+		                                        <td>${city.alternativeCode}</td>
+		                                    </tr>
+		                                </c:forEach>
+		                            </table>
+		                        </div><div id="cities3" class="tab-pane fade">
+		                            <h3>Cities Level 3</h3>
+		                            <table class="table">
+		                                <tr>
+		                                    <th>Name</th>
+		                                    <th>Code</th>
+		                                    <th>Level</th>
+		                                    <th>Alternative Code</th>
+		                                </tr>
+		                                <c:forEach var="city" items="${partCities}">
+		                                    <tr>
+		                                        <td><a href="GeographicAreaSingleServlet?id=${city.geographicAreaID}">${city.name}</a></td>
+		                                        <td>${city.code}</td>
+		                                        <td>${city.level}</td>
+		                                        <td>${city.alternativeCode}</td>
+		                                    </tr>
+		                                </c:forEach>
+		                            </table>
+		                        </div>
+		                   </div>
                         </div>
                     </div>
                 </div>

@@ -55,15 +55,12 @@ public class GeographicAreaSingleServlet extends HttpServlet {
 					"$80,000 to $89,999"
 					);
 			
-			request.setAttribute("households", households.size());
+			if(households.size() > 0)
+				request.setAttribute("households", households.get(0).getNumberReported());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 		request.getRequestDispatcher(redirectionPath).forward(request, response);
-		
-		
 	}
 
 	/**

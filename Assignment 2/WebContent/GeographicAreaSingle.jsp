@@ -85,22 +85,24 @@
                                         <td><fmt:formatNumber type = "number" value = "${ages[1].combined}" /></td>
                                     </tr>
                             </table>
-                            <h3>Households that fit:</h3>
-                            <table class="table">
-                           		<tr>
-		                            <ul>
-		                            	<li>2016 Canada Census Year</li>
-		                            	<li>One couple census family without other persons in the household</li>
-		                            	<li>2 or more members in the household</li>
-		                            	<li>At least 1 earner in the household</li>
-		                            	<li>Total income between $80,000 and $89,99</li>
-		                            </ul>
-                            	</tr>
-                           		<tr>
-                                    <td>Total:</td>
-                                    <td>${households}</td>
-                                </tr>
-                            </table>
+                            <c:if test="${area.level < 2}">
+	                            <h3>Households that fit:</h3>
+	                            <table class="table">
+	                           		<tr>
+			                            <ul>
+			                            	<li>2016 Canada Census Year</li>
+			                            	<li>One couple census family without other persons in the household</li>
+			                            	<li>2 or more members in the household</li>
+			                            	<li>At least 1 earner in the household</li>
+			                            	<li>Total income between $80,000 and $89,99</li>
+			                            </ul>
+	                            	</tr>
+	                           		<tr>
+	                                    <td>Total:</td>
+	                                    <td>${households}</td>
+	                                </tr>
+	                            </table>
+                            </c:if>
                         </div>
                         <c:if test="${area.level < 2}">
 	                        <div id="subLocations" class="tab-pane fade">
